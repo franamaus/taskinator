@@ -3,12 +3,22 @@ var formEl = document.querySelector("#task-form");
 var tasksToDoEl = document.querySelector("#tasks-to-do");
 
 var taskFormHandler = function(event) {
+    // disables inbuilt functions of the browser
     event.preventDefault();
 
     var taskNameInput = document.querySelector("input[name='task-name']").value;
     console.dir(taskNameInput);
     var taskTypeInput = document.querySelector("select[name='task-type']").value;
     console.log(taskTypeInput);
+
+    // check if input values are empty strings
+    if (!taskNameInput || !taskTypeInput) {
+        alert("You need to fill out the task form!");
+        return false;
+    }
+
+    // resets the input section from the last submit to blank
+    formEl.reset();
 
     // package up data as an onject
     var taskDataObj = {
