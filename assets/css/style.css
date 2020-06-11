@@ -226,6 +226,7 @@ footer {
   }
 
   .task-list-wrapper {
+    /* this allows the .task list-wrapper to be stacked*/
     flex-basis: 100%;
   }
 
